@@ -5,11 +5,11 @@ head(titanic_df)
 library(dplyr)
 library(tidyr)
 
-#Replace empty observations in Embark with S
+# replace empty observations in embark with S
 titanic_df[titanic_df$embarked == "", "embarked"] <- "S"
 
 
-# replace NA is age with mean of age
+# replace NA in age with mean of age
 titanic_df$age[is.na(titanic_df$age)] <- mean(titanic_df$age, na = TRUE)
 
 # fill empty boat values with "NA"
